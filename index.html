@@ -8,10 +8,16 @@
 
     <!-- The main CSS file -->
 		<link href="css/bootstrap_cerulean.min.css" rel="stylesheet" />
-
+		<link href="css/cube.css" rel="stylesheet" type="text/css">
+    	
+    	<!--cube code css-->
+    	<link href="css/hexaflip.css" rel="stylesheet" type="text/css">
+    	<!--<link href="demo/favicon.png" rel="icon" type="image/png">-->
+		
+		
 		<style> /*CSS code goes inside this tag. Comment syntax in CSS is different from HTML*/
 		.center{ /* '.' signifies this is a class name */
-			width: 85%;
+			width: 83%;
 			margin: 0 auto;
 		}
 
@@ -21,6 +27,7 @@
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script src="js/jquery-ui-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
 	</head>
 
 
@@ -64,45 +71,71 @@
       <!-- Div in which active content will be displayed -->
       <div id="content" class="center"> <!-- Apply the class we defined in the style tag earlier -->
 
-      <!-- Temp code-->
-          <div>
-            <h3>Resources: <span class="label label-info">Info</span> </h3>
-              
-            <div class="panel panel-default">
-              <div class="panel-body">
-                The theme website which previews UI elements like buttons, panels, dialogs etc:<br>
-                <a href="http://bootswatch.com/cerulean/">Cerulean Bootstrap theme</a><br><br>
+    		<section id="photos">
+        		<h1>HOME</h1>
 
-                How to implement those UI elements:<br>
-                <a href="http://getbootstrap.com/components/">Bootstrap Components Examples</a><br><br>
+        		<div id="photo-controls">
+          	  		<div>Prev</div>
+           		 	<div>Next</div>
+      	 		</div>
 
-                JQuery UI for Draggable, Selectable and other functions needed through JavaScript<br>
-                <a href="http://jqueryui.com/demos/">http://jqueryui.com/demos/</a>
-              </div>
-            </div>
-          </div>
-
-          <div>
-          Hello world!
-          <div id="red" style="background-color: red; width: 30px; height: 30px;"> <!-- CSS can also be written in "style" attribute for tags-->
-
-          </div>
-          <br>
-          <div id="blue" style="background-color: blue; width: 30px; height: 30px;">
-
-          </div>
-        </div>
-        <!-- /end temp code -->
-
+        		<div id="photo-demo"> </div>
+   			</section>
       </div>
-
+    <script src="js/hexaflip.js"></script>
 
 		<script> //This is where javascript goes. Comment syntax is different from HTML
-		$(function(){
-			//$('#red').addClass('uk-animation-slide-left');
-			//$('#red').css('display', 'none');
-		})
-		</script>
 
+    //Returns smaller size from width/height of window
+    function getMaxCubeSize(){
+
+      //Get 80% of height and width
+      var height = Math.floor($(window).height() * 0.8);
+      var width = Math.floor($(window).width() * 0.8);
+
+      //Return dimension that is lesser to contrain the size of cube
+      if (height > width) 
+        return width;
+      else 
+        return height;
+    }
+
+    //3D Cube code - HexaFlip code
+		(function() {
+        document.addEventListener('DOMContentLoaded', function() {
+          var action, hexaLogo1, hexaLogo2, hexaPhoto, hexaTime, i, logos, photoControls, _fn, _i, _len, _ref;
+          logos = document.getElementsByClassName('logo');
+          var maxCubeSize = 500;//getMaxCubeSize(); Hard coded for now
+          hexaPhoto = new HexaFlip(document.getElementById('photo-demo'), {
+            photos: (function() {
+              var _i, _results;
+              _results = [];
+              for (i = _i = 1; _i <=4 ; i = ++_i) {
+                _results.push("images/cubefaces/" + i + ".jpg");
+              }
+              return _results;
+            })()
+          }, {
+            size: maxCubeSize,
+            horizontalFlip: true
+            
+          });
+          photoControls = document.getElementById('photo-controls');
+          _ref = ['flipBack', 'flip'];
+          _fn = function(action) {
+            return photoControls.children[i].addEventListener('click', (function() {
+              return hexaPhoto[action]();
+            }), false);
+          };
+          for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+            action = _ref[i];
+            _fn(action);
+          }
+
+        }, false);
+
+      }).call(this);
+    //End 3D Cube code
+		</script>
 	</body>
 </html>
