@@ -13,8 +13,14 @@
     	<!--cube code css-->
     	<link href="css/hexaflip.css" rel="stylesheet" type="text/css">
     	<!--<link href="demo/favicon.png" rel="icon" type="image/png">-->
-		
-		
+
+    <!-- Import JavaScript libraries -->
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/jquery-ui-1.10.2.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<script src="js/slidr.min.js"></script>
+
+
 		<style> /*CSS code goes inside this tag. Comment syntax in CSS is different from HTML*/
 		.center{ /* '.' signifies this is a class name */
 			width: 83%;
@@ -22,11 +28,6 @@
 		}
 
 		</style>
-
-    <!-- Import JavaScript libraries -->
-		<script src="js/jquery-2.1.0.min.js"></script>
-		<script src="js/jquery-ui-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     
 	</head>
 
@@ -42,16 +43,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">HP Talent</a>
+            <a class="navbar-brand" href="#" onclick="hideAllDivs('#cube')">HP Talent</a>
             <!--<a href="#"><img style="margin: 0 10px 0 0" src="images/hp-logo.gif"></a>-->
           </div>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#">Home</a></li>
+              <li><a href="#" onclick="hideAllDivs('#cube')">Home</a></li>
             </ul>
-            <form class="navbar-form navbar-left">
-              <input type="text" class="form-control col-lg-8" placeholder="Search">
-            </form>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
@@ -69,8 +67,150 @@
       </div>
 
       <!-- Div in which active content will be displayed -->
-      <div id="content" class="center"> <!-- Apply the class we defined in the style tag earlier -->
+      <div id="content" class="center">
 
+      <!-- Shows some helpful content, and also shows how to do grid layout with panels from Bootstrap Cerulean -->
+      <div id="resources" style="display:none;">
+
+      	<div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1>To Get Started:</h1>
+            </div>
+          </div>
+        </div>
+
+      	<!-- Apply class 'row' to a div to create row-->
+	      <div class="row">
+
+	      <!-- Apply a column size for within the row.-->
+		      <div class="col-lg-3">
+
+		      <!-- This code creates panels. Class names are self explanatory -->
+		      	<div class="panel panel-primary" style="height: 200px;"> <!-- Fixed height at 250px for uniform size across row -->
+					<div class="panel-heading" > 
+					    <h3 class="panel-title">Download Microsoft Visual Studio Web</h3>
+					  </div>
+					  <div class="panel-body">
+					    <a href="http://www.microsoft.com/en-us/download/details.aspx?id=40747">http://www.microsoft.com/en-us/download/details.aspx?id=40747</a>
+					  </div>
+					</div>
+				</div>
+
+		      <div class="col-lg-3"  >
+		      	<div class="panel panel-primary" style="height: 200px;">
+					<div class="panel-heading" >
+					    <h3 class="panel-title">Open index.html file</h3>
+					  </div>
+					  <div class="panel-body">
+					    Within visual studio
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+		      	<div class="panel panel-primary" style="height: 200px;">
+					<div class="panel-heading">
+					    <h3 class="panel-title">To test open file in Chrome</h3>
+					  </div>
+					  <div class="panel-body">
+					    Press F12 in Chrome to bring up console. Click on "Sources" tab to bring up debugger. <br/> <br/>
+					    To create a breakpoint, click on line number
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+		      	<div class="panel panel-primary" style="height: 200px;">
+					<div class="panel-heading">
+					    <h3 class="panel-title">To go back to homescreen</h3>
+					  </div>
+					  <div class="panel-body">
+					    Click Home at top or click refresh
+					  </div>
+					</div>
+				</div>
+
+			</div> <!-- end first row -->
+
+			
+			<div class="row">
+		      <div class="col-lg-6">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">JQuery & JQuery UI</h3>
+					  </div>
+					  <div class="panel-body">
+					  If you get familiar with jquery and what it is used for or how to at the least identify where jquery is being used:
+					  	<br/>
+
+					  	<a href="api.jquery.com">api.jquery.com</a><br/>
+
+					  	<a href="api.jqueryui.com">api.jqueryui.com</a>
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">For UI components</h3>
+					  </div>
+					  <div class="panel-body">
+					  
+					  Scroll through this page to see all the UI components available to us:
+					  	<a href="http://bootswatch.com/cerulean/">http://bootswatch.com/cerulean/</a><br/><br/>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+		      <div class="col-lg-9">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">These are panels</h3>
+					  </div>
+					  <div class="panel-body">
+					  They're laid in a grid layout. Use the code for this as reference to be able to to do layouts.
+					  </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+		      <div class="col-lg-12">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">And they are different sizes</h3>
+					  </div>
+					  <div class="panel-body">
+					    Notice how size of FIRST rows' panels are same size regardless of content. For a uniform look, I fixed the height to 200px.
+					  </div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+      <!-- Home screen cube -->
+      	<div id="cube">
+
+      	<!-- Slidr Cube
+			<div id="slidr-img" style="display: inline-block">
+			  <img data-slidr="one" src="images/cubefaces/1.jpg" onclick="hideAllDivs('#talentPage')"/> //haven't tested if onclick event works in this case
+			  <img data-slidr="two" src="images/cubefaces/2.jpg"/>
+			  <img data-slidr="three" src="images/cubefaces/3.jpg"/>
+			</div> -->
+		<div class="row">
+		<button type="button" onclick="hideAllDivs('#resources')">Click Me First/Resources</button>
+		<button type="button" onclick="hideAllDivs('#talentPage')">talentPage</button>
+		<button type="button" onclick="hideAllDivs('#industriesPage')">industriesPage</button>
+		<button type="button" onclick="hideAllDivs('#companyPage')">companyPage</button>
+		<button type="button" onclick="hideAllDivs('#projectPage')">projectPage</button>
+		<button type="button" onclick="hideAllDivs('#regionPage')">regionPage</button>
+		</div>
     		<section id="photos">
         		<h1>HOME</h1>
 
@@ -81,10 +221,40 @@
 
         		<div id="photo-demo"> </div>
    			</section>
+   			</div>
+
+   			<!-- Employee Screen -->
+		      <div id="talentPage" style="display:none;">
+		      </div>
+
+		      <!-- Industries -->
+		      <div id="industriesPage" style="display:none;">
+		      </div>
+
+		      <div id="companyPage" style="display:none;">
+		      </div>
+
+		      <div id="projectPage" style="display:none;">
+		      </div>
+
+		      <div id="regionPage" style="display:none;">
+		      </div>
+
       </div>
+
+
+
     <script src="js/hexaflip.js"></script>
 
 		<script> //This is where javascript goes. Comment syntax is different from HTML
+
+		// Use this function to hide other "pages"
+		//For example of this, look at the button tag in id="cube" div
+		function hideAllDivs(showDiv){ 
+			var animation = 'clip';
+			$('#content').children().hide(animation);
+			$(showDiv).show(animation);
+		}
 
     //Returns smaller size from width/height of window
     function getMaxCubeSize(){
@@ -100,7 +270,7 @@
         return height;
     }
 
-    //3D Cube code - HexaFlip code
+    //3D Cube - HexaFlip code
 		(function() {
         document.addEventListener('DOMContentLoaded', function() {
           var action, hexaLogo1, hexaLogo2, hexaPhoto, hexaTime, i, logos, photoControls, _fn, _i, _len, _ref;
@@ -136,6 +306,30 @@
 
       }).call(this);
     //End 3D Cube code
+		</script>
+
+		<script type="text/javascript">
+
+		 //This function runs first thing once the document is finished rendering
+		$(document).ready(function(){
+
+			//Initialize Slidr.js cube
+
+			/*slidr.create('slidr-img', {
+			  after: function(e) { console.log('in: ' + e.in.slidr); },
+			  before: function(e) { console.log('out: ' + e.out.slidr); },
+			  breadcrumbs: true,
+			  controls: 'border',
+			  direction: 'horizontal',
+			  fade: false,
+			  keyboard: true,
+			  overflow: true,
+			  theme: '#222',
+			  timing: { 'cube': '0.3s ease-in' },
+			  touch: true,
+			  transition: 'cube'
+			}).start();*/
+		})
 		</script>
 	</body>
 </html>
