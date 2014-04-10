@@ -8,10 +8,10 @@
 
     <!-- The main CSS file -->
 		<link href="css/bootstrap_cerulean.min.css" rel="stylesheet" />
-		<link href="css/cube.css" rel="stylesheet" type="text/css">
+		<!--<link href="css/cube.css" rel="stylesheet" type="text/css">
     	
     	<!--cube code css-->
-    	<link href="css/hexaflip.css" rel="stylesheet" type="text/css">
+    	<!--<link href="css/hexaflip.css" rel="stylesheet" type="text/css">
     	<!--<link href="demo/favicon.png" rel="icon" type="image/png">-->
 
     <!-- Import JavaScript libraries -->
@@ -19,11 +19,12 @@
 		<script src="js/jquery-ui-1.10.2.min.js"></script>
     	<script src="js/bootstrap.min.js"></script>
     	<script src="js/slidr.min.js"></script>
+    	<script src="js/jquery.bootstrap-growl.min.js"></script>
 
 
 		<style> /*CSS code goes inside this tag. Comment syntax in CSS is different from HTML*/
 		.center{ /* '.' signifies this is a class name */
-			width: 83%;
+			width: 90%;
 			margin: 0 auto;
 		}
 
@@ -39,9 +40,9 @@
         <div class="center">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
             </button>
             <a class="navbar-brand" href="#" onclick="hideAllDivs('#cube')">HP Talent</a>
             <!--<a href="#"><img style="margin: 0 10px 0 0" src="images/hp-logo.gif"></a>-->
@@ -52,11 +53,12 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, Jack <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+                	<li><a href="#">Account</a></li>
                   <li><a href="#">Settings</a></li>
                   <li><a href="#">Administrator</a></li>
-                  <li class="divider"></li>
+                  <li class="divider"> </li>
                   <!--<li class="dropdown-header">Dropdown Header</li>-->
                   <li><a href="#">Sign Out</a></li>
                 </ul>
@@ -195,43 +197,220 @@
 		</div>
 
       <!-- Home screen cube -->
-      	<div id="cube">
+      	<div id="cube" style="width: 800px; margin: auto"><!--Tweaked it here and there-->
 
-      	<!-- Slidr Cube
-			<div id="slidr-img" style="display: inline-block">
-			  <img data-slidr="one" src="images/cubefaces/1.jpg" onclick="hideAllDivs('#talentPage')"/> //haven't tested if onclick event works in this case
-			  <img data-slidr="two" src="images/cubefaces/2.jpg"/>
-			  <img data-slidr="three" src="images/cubefaces/3.jpg"/>
-			</div> -->
-		<div class="row">
-		<button type="button" onclick="hideAllDivs('#resources')">Click Me First/Resources</button>
-		<button type="button" onclick="hideAllDivs('#talentPage')">talentPage</button>
-		<button type="button" onclick="hideAllDivs('#industriesPage')">industriesPage</button>
-		<button type="button" onclick="hideAllDivs('#companyPage')">companyPage</button>
-		<button type="button" onclick="hideAllDivs('#projectPage')">projectPage</button>
-		<button type="button" onclick="hideAllDivs('#regionPage')">regionPage</button>
+			<div id="slidr-img" style="display: inline-block; width:70%; "><!--Tweaked it here and there-->
+			  <img data-slidr="one" src="images/cubefaces/1.jpg" style="width:100%;" onclick="hideAllDivs('#talentPage')"/> 
+			  <img data-slidr="two" src="images/cubefaces/2.jpg" style="width:100%;"/>
+			  <img data-slidr="three" src="images/cubefaces/3.jpg" style="width:100%;"/>
+			  <img data-slidr="four" src="images/cubefaces/4.jpg" style="width:100%;"/>
+			</div> 
+   		</div>
+
+		<div class="row" style="margin-left: 280px"><!--Tweaked it here and there-->
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#resources')">Click Me First/Resources</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#talentPage')">talentPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#industriesPage')">industriesPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#companyPage')">companyPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#projectPage')">projectPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#regionPage')">regionPage</button>
 		</div>
-    		<section id="photos">
-        		<h1>HOME</h1>
-
-        		<div id="photo-controls">
-          	  		<div>Prev</div>
-           		 	<div>Next</div>
-      	 		</div>
-
-        		<div id="photo-demo"> </div>
-   			</section>
-   			</div>
-
    			<!-- Employee Screen -->
-		      <div id="talentPage" style="display:none;">
+		      <div id="talentPage" style="display:none;text-align: center">
+		      		
+		      		<div class="row">
+		      		<div class="col-md-8">
+		      			<div class="panel panel-primary" id="company-panel">
+		  					<div class="panel-heading" id="company-header">
+		    				<h3 class="panel-title">Employees</h3>
+		  					</div>
+		  						<div class="panel-body" id="talent-body">
+		    						<div class="row">
+		    						<div class="col-md-3">
+		    						<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Temesgxn Gebrehiwet</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Alan Vo</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Nestor Hernandez</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Faadhil Hakkim</h5>
+									  </div>
+									</div>
+									</div>
+									</div>
+
+									<div class="row">
+		    						<div class="col-md-3">
+		    						<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Bilal Hasan</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Jack Story</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>John Doe</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Tim Smith</h5>
+									  </div>
+									</div>
+									</div>
+									</div>
+
+								</div>
+						</div>			
+						</div>
+
+						<div class="col-md-1">
+						</div>
+					
+						<div class="col-md-3">
+				      	<div class="panel panel-primary">
+		  					<div class="panel-heading">
+		    				<h3 class="panel-title">Talent</h3>
+		  					</div>
+		  						<div id="talent-list-body" class="panel-body">
+									<ul id="company-list" style="margin-top: 40px;padding-left: 5em">
+										<li id="1" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP</li>
+										<li id="2" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP2</li>
+										<li id="3"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP3</li>
+										<li id="4"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP4</li>
+										<li id="5"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP5</li>
+										<li id="6"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP6</li>
+										<li id="7"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP7</li>
+										<li id="8"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP8</li>
+										<li id="9"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP9</li>
+									</ul>	
+		  						</div>
+						</div>
+						</div>			
+
+		      		</div>
+		      	
+		      	
+				
+				
+				
+		      	
 		      </div>
 
 		      <!-- Industries -->
 		      <div id="industriesPage" style="display:none;">
 		      </div>
 
-		      <div id="companyPage" style="display:none;">
+		      <div id="companyPage" style="display:none; margin: auto">
+		      	
+		      	
+		      	
+		      	<div class="panel panel-primary" id="company-panel" style="display:inline;float: left; width:75%; max-width:75%">
+  					<div class="panel-heading" id="company-header">
+    				<h3 class="panel-title">Panel primary</h3>
+  					</div>
+  						<div class="panel-body" id="company-body">
+    						Contains infomation on company
+  						</div>
+  						
+				</div>
+				
+				
+				<button type="button" class="btn btn-primary btn-lg" style="width:25%; max-width:25%">New Company</button>				
+				
+				
+				
+		      	<div id="company-list-panel" class="panel panel-primary" style="display:inline; float:right; width:25%; max-width:25%;height:850px;max-height:95%;overflow: scroll">
+  					<div class="panel-heading">
+    				<h3 class="panel-title">Companies</h3>
+  					</div>
+  						<div id="company-list-body" class="panel-body">
+							<ul id="company-list" style="margin-top: 40px;padding-left: 5em">
+								<li id="1" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP</li>
+								<li id="2" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP2</li>
+								<li id="3"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP3</li>
+								<li id="4"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP4</li>
+								<li id="5"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP5</li>
+								<li id="6"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP6</li>
+								<li id="7"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP7</li>
+								<li id="8"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP8</li>
+								<li id="9"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP9</li>
+								<li id="10"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">H10P</li>
+								<li id="11"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP11</li>
+								<li id="12"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP12</li>
+								<li id="13"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP13</li>
+								<li id="14"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP14</li>
+								<li id="15"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP15</li>
+								<li id="16"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP16</li>
+								<li id="17"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP17</li>
+								<li id="18"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP18</li>
+								<li id="19"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP19</li>
+								<li id="20"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP20</li>
+								<li id="21"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP21</li>
+								<li id="22"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP22</li>
+								<li id="23"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP23</li>
+							</ul>	
+  						</div>
+				</div>				
+		      	
+		      	
+		      
+		      	<!--NESTOR ALEJANDRO H-->
+		      	
+		      	
+		      	
+		      	
+		      	
+		      	
 		      </div>
 
 		      <div id="projectPage" style="display:none;">
@@ -242,10 +421,6 @@
 
       </div>
 
-
-
-    <script src="js/hexaflip.js"></script>
-
 		<script> //This is where javascript goes. Comment syntax is different from HTML
 
 		// Use this function to hide other "pages"
@@ -254,6 +429,24 @@
 			var animation = 'clip';
 			$('#content').children().hide(animation);
 			$(showDiv).show(animation);
+		}
+
+		function notify (message){
+
+			message = (message) ? message : "My message";
+
+			$.bootstrapGrowl(message, 
+				{
+				  ele: 'body', // which element to append to
+				  type: 'info', // (null, 'info', 'error', 'success')
+				  offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+				  align: 'right', // ('left', 'right', or 'center')
+				  width: 250, // (integer, or 'auto')
+				  delay: 4000,
+				  allow_dismiss: true,
+				  stackup_spacing: 10 // spacing between consecutively stacked growls.
+				}
+  			);
 		}
 
     //Returns smaller size from width/height of window
@@ -269,44 +462,37 @@
       else 
         return height;
     }
-
-    //3D Cube - HexaFlip code
-		(function() {
-        document.addEventListener('DOMContentLoaded', function() {
-          var action, hexaLogo1, hexaLogo2, hexaPhoto, hexaTime, i, logos, photoControls, _fn, _i, _len, _ref;
-          logos = document.getElementsByClassName('logo');
-          var maxCubeSize = 500;//getMaxCubeSize(); Hard coded for now
-          hexaPhoto = new HexaFlip(document.getElementById('photo-demo'), {
-            photos: (function() {
-              var _i, _results;
-              _results = [];
-              for (i = _i = 1; _i <=4 ; i = ++_i) {
-                _results.push("images/cubefaces/" + i + ".jpg");
-              }
-              return _results;
-            })()
-          }, {
-            size: maxCubeSize,
-            horizontalFlip: true
-            
-          });
-          photoControls = document.getElementById('photo-controls');
-          _ref = ['flipBack', 'flip'];
-          _fn = function(action) {
-            return photoControls.children[i].addEventListener('click', (function() {
-              return hexaPhoto[action]();
-            }), false);
-          };
-          for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-            action = _ref[i];
-            _fn(action);
-          }
-
-        }, false);
-
-      }).call(this);
-    //End 3D Cube code
+    
+     
 		</script>
+		
+		
+		
+		
+		
+	<!-- Compnay Javascript and jQuery Used-->	
+		<script>
+			window.onload=function()
+			{
+				var lis=document.getElementById('company-list').getElementsByTagName('li');
+				for(i=0;i<lis.length;i++)
+				{
+					lis[i].onclick=myFunction;
+				}		
+			}
+
+			function myFunction()
+			{
+
+				$('#company-header .panel-title').html(this.innerHTML);
+
+				$('#company-panel .panel-body').html(this.innerHTML);
+			}
+			
+			   
+		</script>
+
+
 
 		<script type="text/javascript">
 
@@ -315,7 +501,7 @@
 
 			//Initialize Slidr.js cube
 
-			/*slidr.create('slidr-img', {
+			slidr.create('slidr-img', {
 			  after: function(e) { console.log('in: ' + e.in.slidr); },
 			  before: function(e) { console.log('out: ' + e.out.slidr); },
 			  breadcrumbs: true,
@@ -328,8 +514,33 @@
 			  timing: { 'cube': '0.3s ease-in' },
 			  touch: true,
 			  transition: 'cube'
-			}).start();*/
-		})
+			}).start();
+			
+			$('#company-list').sortable({revert: false});
+			
+			$('#company-list li').each(function(i)
+			{
+			   $(this).draggable({ scroll: true,
+			   	connectToSortable: "#company-list",
+ 			    revert: "invalid",
+ 			    containment: "[500px, 500px, 500px, 500px]"
+ 			     });
+			});
+
+			$('.panel-default').each(function(i)
+			{
+			   $(this).draggable({ scroll: true,
+			   	//connectToSortable: "#company-list",
+ 			    revert: "invalid",
+ 			    stack: ".panel-default"
+ 			    //containment: "[500px, 500px, 500px, 500px]"
+ 			     });
+			});
+			
+		});
+
+		
 		</script>
+		
 	</body>
 </html>
