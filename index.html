@@ -322,17 +322,13 @@
 		    				<h3 class="panel-title">Talent</h3>
 		  					</div>
 		  						<div id="talent-list-body" class="panel-body">
-									<ul id="company-list" style="margin-top: 40px;padding-left: 5em">
-										<li id="1" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP</li>
-										<li id="2" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP2</li>
-										<li id="3"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP3</li>
-										<li id="4"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP4</li>
-										<li id="5"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP5</li>
-										<li id="6"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP6</li>
-										<li id="7"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP7</li>
-										<li id="8"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP8</li>
-										<li id="9"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP9</li>
-									</ul>	
+
+		  						<div class="panel panel-default" id="companyOnTalentPage" >
+								  <div class="panel-body">
+								    <img src="images/hp-logo.gif"/>
+								  </div>
+								</div>
+								<hr/>
 		  						</div>
 						</div>
 						</div>			
@@ -527,7 +523,9 @@
  			     });
 			});
 
-			$('.panel-default').each(function(i)
+			$('#companyOnTalentPage').sortable({revert: false});
+
+			$('#company-panel .panel-default').each(function(i)
 			{
 			   $(this).draggable({ scroll: true,
 			   	//connectToSortable: "#company-list",
@@ -536,6 +534,25 @@
  			    //containment: "[500px, 500px, 500px, 500px]"
  			     });
 			});
+
+			$( "#company-panel .panel-default" ).droppable();
+
+			$( "#talent-list-body" ).droppable({
+		      activeClass: "ui-state-default",
+		      hoverClass: "ui-state-hover",
+		      accept: ":not(.ui-sortable-helper)",
+		      drop: function( event, ui ) {
+		        $( this ).find( "#talent-list-body" ).remove();
+		        //$( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
+		      }
+		    }).sortable({
+		      //items: "li:not(.placeholder)",
+		      sort: function() {
+		        // gets added unintentionally by droppable interacting with sortable
+		        // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+		        $( this ).removeClass( "ui-state-default" );
+		      }
+		    });
 			
 		});
 
