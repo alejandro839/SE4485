@@ -220,7 +220,7 @@
 		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#regionPage')">regionPage</button>
 		</div>
    			<!-- Employee Screen -->
-		      <div id="talentPage" style="display:none;text-align: center">
+		      <div id="talentPage" style="display:none; text-align:center">
 		      		
 		      		<div class="row">
 		      		<div class="col-md-8">
@@ -325,25 +325,26 @@
 		  					<div class="panel-heading">
 		    				<h3 class="panel-title">Talent</h3>
 		  					</div>
-		  						<div id="talent-list-body" class="panel-body">
+		  						<div id="talent-list-body"> 
+
+		  						<div class="panel-body">
 
 		  						<div class="panel panel-default" id="companyOnTalentPage" >
 								  <div class="panel-body">
 								    <img src="images/hp-logo.gif"/>
 								  </div>
 								</div>
+								</div>
 								<hr/>
+									<ul id='talent-role'>
+									
+									</ul>
+
 		  						</div>
 						</div>
 						</div>			
 
 		      		</div>
-		      	
-		      	
-				
-				
-				
-		      	
 		      </div>
 
 		      <!-- Industries -->
@@ -730,7 +731,7 @@
 				  width: 250, // (integer, or 'auto')
 				  delay: 4000,
 				  allow_dismiss: true,
-				  stackup_spacing: 10 // spacing between consecutively stacked growls.
+				  stackup_spacing: 10 //spacing between consecutively stacked growls.
 				}
   			);
 		}
@@ -832,7 +833,33 @@
 		      hoverClass: "ui-state-hover",
 		      accept: ":not(.ui-sortable-helper)",
 		      drop: function( event, ui ) {
-		        $( this ).find( "#talent-list-body" ).remove();
+		      	$ui = ui.draggable
+		        $item = $( this )
+		        $ui.fadeOut(function(){
+		        	$ui.appendTo('#talent-role').fadeIn(function() {
+				          $ui
+				            .animate({ width: "100px", height: "100px" })
+				            .find("img")
+				              .animate({ height: "36px", width: "36px"});
+				        });
+		        })
+		        
+		      }
+		    }).sortable({
+		      //items: "li:not(.placeholder)",
+		      sort: function() {
+		        // gets added unintentionally by droppable interacting with sortable
+		        // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+		        $( this ).removeClass( "ui-state-default" );
+		      }
+		    });
+
+		    $( "#talent-body" ).droppable({
+		      activeClass: "ui-state-default",
+		      hoverClass: "ui-state-hover",
+		      accept: ":not(.ui-sortable-helper)",
+		      drop: function( event, ui ) {
+		        $( this ).find( "#talent-body" ).remove();
 		        //$( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
 		      }
 		    }).sortable({
