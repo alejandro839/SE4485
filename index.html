@@ -28,10 +28,19 @@
 			margin: 0 auto;
 		}
 		
-		.right-align-buttons
+		.align-right-button
 		{
-			
+			position:absolute;
+			right:10px;
+			width:100px;
+			top:02px;
 		}
+		
+		.button-style
+		{
+			height: 33px;
+		}
+		
 		</style>
     
 	</head>
@@ -199,7 +208,7 @@
 			</div>
 
 		</div>
-
+		<!-- Login Screen -->
       <!-- Home screen cube -->
       	<div id="cube" style="width: 800px; margin: auto"><!--Tweaked it here and there-->
 
@@ -226,7 +235,17 @@
 		      		<div class="col-md-8">
 		      			<div class="panel panel-primary" id="company-panel">
 		  					<div class="panel-heading" id="company-header">
-		    				<h3 class="panel-title">Employees</h3>
+		    				<h3 class="panel-title">
+								Employees
+								<div class="align-right-button">
+										<button type="button" onclick="hideAllDivs('#addTalentPage')"class="btn btn-primary button-style">
+											<span class="glyphicon glyphicon-plus"></span>
+										</button>
+										<button type="button" onclick="hideAllDivs('#deleteTalentPage')" class="btn btn-danger button-style">
+											<span class="glyphicon glyphicon-remove-circle"></span>
+										</button>
+								</div>
+							</h3>
 		  					</div>
 		  						<div class="panel-body" id="talent-body">
 		    						<div class="row">
@@ -354,17 +373,18 @@
 		      		<div class="col-md-12">
 		      			<div class="panel panel-primary" id="industry-panel">
 		  					<div class="panel-heading" id="industry-header">
-									<h3 class="button-title" align="right">
-										<div  class="btn-group btn-group-sm">
-											<button type="button"  class="btn btn-primary right-align-button"><span class="glyphicon glyphicon-plus"></span></button>
-											<button type="button"  class="btn btn-danger right-align-button" ><span class="glyphicon glyphicon-remove-circle"></span></button>
-										</div>
-									</h3>
-								<h1 class="panel-title">Industries</h1>
-								
+								<h1 class="panel-title">
+									Industries
+									<div class="align-right-button">
+											<button type="button" onclick="hideAllDivs('#addIndustryPage')"class="btn btn-primary button-style">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+											<button type="button" onclick="hideAllDivs('#deleteIndustryPage')" class="btn btn-danger button-style">
+												<span class="glyphicon glyphicon-remove-circle"></span>
+											</button>
+									</div>
+								</h1>
 		  					</div>
-							
-							
 							
 							<div class="panel-body" id="industry-body">
 								<div class="row">
@@ -491,6 +511,44 @@
 								
 							</div>
 						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+			  <div id="addIndustryPage" style="display:none;text-align: center;">
+			  	
+		      		<div class="row">
+		      		<div class="col-md-12">
+		      			<div class="panel panel-primary" id="addIndustry-panel">
+		  					<div class="panel-heading" id="addIndustry-header">
+								<h1 class="panel-title">
+									Create New Industry
+								</h1>
+		  					</div>
+							
+							<div class="panel-body" id="addIndustry-body">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div id="deleteIndustryPage" style="display:none;text-align: center;">
+			  	
+		      		<div class="row">
+		      		<div class="col-md-12">
+		      			<div class="panel panel-primary" id="deleteIndustry-panel">
+		  					<div class="panel-heading" id="deleteIndustry-header">
+								<h1 class="panel-title">
+									Modify Industry
+								</h1>
+		  					</div>
+							
+							<div class="panel-body" id="addIndustry-body">
+								
+							</div>
 						</div>
 					</div>
 				</div>
