@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Visual Talent Management</title>
+
+
+    <!-- The main CSS file -->
+		<link href="css/bootstrap_cerulean.min.css" rel="stylesheet" />
+		<!--<link href="css/cube.css" rel="stylesheet" type="text/css">
+    	
+    	<!--cube code css-->
+    	<!--<link href="css/hexaflip.css" rel="stylesheet" type="text/css">
+    	<!--<link href="demo/favicon.png" rel="icon" type="image/png">-->
+
+    <!-- Import JavaScript libraries -->
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/jquery-ui-1.10.2.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<script src="js/slidr.min.js"></script>
+    	<script src="js/jquery.bootstrap-growl.min.js"></script>
+
+
+		<style> /*CSS code goes inside this tag. Comment syntax in CSS is different from HTML*/
+		.center{ /* '.' signifies this is a class name */
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+		.align-right-button
+		{
+			position:absolute;
+			right:10px;
+			width:100px;
+			top:02px;
+		}
+		
+		.button-style
+		{
+			height: 33px;
+		}
+		
+		</style>
+    
+	</head>
+
+
+	<body>
+
+	<!-- Navbar code: Almost all CSS classes are provided by the bootstrap.min.css import-->
+      <div id="navbar" class="navbar navbar-default">
+        <div class="center">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand" href="#" onclick="hideAllDivs('#cube')">HP Talent</a>
+            <!--<a href="#"><img style="margin: 0 10px 0 0" src="images/hp-logo.gif"></a>-->
+          </div>
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#" onclick="hideAllDivs('#cube')">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, Jack <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                	<li><a href="#">Account</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li><a href="#">Administrator</a></li>
+                  <li class="divider"> </li>
+                  <!--<li class="dropdown-header">Dropdown Header</li>-->
+                  <li><a href="#">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Div in which active content will be displayed -->
+      <div id="content" class="center">
+
+      <!-- Shows some helpful content, and also shows how to do grid layout with panels from Bootstrap Cerulean -->
+      <div id="resources" style="display:none;">
+
+      	<div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1>To Get Started:</h1>
+            </div>
+          </div>
+        </div>
+
+      	<!-- Apply class 'row' to a div to create row-->
+	      <div class="row">
+
+	      <!-- Apply a column size for within the row.-->
+		      <div class="col-lg-3">
+
+		      <!-- This code creates panels. Class names are self explanatory -->
+		      	<div class="panel panel-primary" style="height: 200px;"> <!-- Fixed height at 250px for uniform size across row -->
+					<div class="panel-heading" > 
+					    <h3 class="panel-title">Download Microsoft Visual Studio Web</h3>
+					  </div>
+					  <div class="panel-body">
+					    <a href="http://www.microsoft.com/en-us/download/details.aspx?id=40747">http://www.microsoft.com/en-us/download/details.aspx?id=40747</a>
+					  </div>
+					</div>
+				</div>
+
+		      <div class="col-lg-3"  >
+		      	<div class="panel panel-primary" style="height: 200px;">
+					<div class="panel-heading" >
+					    <h3 class="panel-title">Open index.html file</h3>
+					  </div>
+					  <div class="panel-body">
+					    Within visual studio
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+		      	<div class="panel panel-primary" style="height: 200px;">
+					<div class="panel-heading">
+					    <h3 class="panel-title">To test open file in Chrome</h3>
+					  </div>
+					  <div class="panel-body">
+					    Press F12 in Chrome to bring up console. Click on "Sources" tab to bring up debugger. <br/> <br/>
+					    To create a breakpoint, click on line number
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+		      	<div class="panel panel-primary" style="height: 200px;">
+					<div class="panel-heading">
+					    <h3 class="panel-title">To go back to homescreen</h3>
+					  </div>
+					  <div class="panel-body">
+					    Click Home at top or click refresh
+					  </div>
+					</div>
+				</div>
+
+			</div> <!-- end first row -->
+
+			
+			<div class="row">
+		      <div class="col-lg-6">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">JQuery & JQuery UI</h3>
+					  </div>
+					  <div class="panel-body">
+					  If you get familiar with jquery and what it is used for or how to at the least identify where jquery is being used:
+					  	<br/>
+
+					  	<a href="api.jquery.com">api.jquery.com</a><br/>
+
+					  	<a href="api.jqueryui.com">api.jqueryui.com</a>
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">For UI components</h3>
+					  </div>
+					  <div class="panel-body">
+					  
+					  Scroll through this page to see all the UI components available to us:
+					  	<a href="http://bootswatch.com/cerulean/">http://bootswatch.com/cerulean/</a><br/><br/>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+		      <div class="col-lg-9">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">These are panels</h3>
+					  </div>
+					  <div class="panel-body">
+					  They're laid in a grid layout. Use the code for this as reference to be able to to do layouts.
+					  </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+		      <div class="col-lg-12">
+		      	<div class="panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title">And they are different sizes</h3>
+					  </div>
+					  <div class="panel-body">
+					    Notice how size of FIRST rows' panels are same size regardless of content. For a uniform look, I fixed the height to 200px.
+					  </div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Login Screen -->
+      <!-- Home screen cube -->
+      	<div id="cube" style="width: 800px; margin: auto"><!--Tweaked it here and there-->
+
+			<div id="slidr-img" style="display: inline-block; width:70%; "><!--Tweaked it here and there-->
+			  <img data-slidr="one" src="images/cubefaces/1.jpg" style="width:100%;" onclick="hideAllDivs('#talentPage')"/> 
+			  <img data-slidr="two" src="images/cubefaces/2.jpg" style="width:100%;"/>
+			  <img data-slidr="three" src="images/cubefaces/3.jpg" style="width:100%;"/>
+			  <img data-slidr="four" src="images/cubefaces/4.jpg" style="width:100%;"/>
+			</div> 
+   		</div>
+
+		<div class="row" style="margin-left: 280px"><!--Tweaked it here and there-->
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#resources')">Click Me First/Resources</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#talentPage')">talentPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#industriesPage')">industriesPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#companyPage')">companyPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#projectPage')">projectPage</button>
+		<button type="button" class="btn btn-primary" onclick="hideAllDivs('#regionPage')">regionPage</button>
+		</div>
+   			<!-- Employee Screen -->
+		      <div id="talentPage" style="display:none; text-align:center">
+		      		
+		      		<div class="row">
+		      		<div class="col-md-8">
+		      			<div class="panel panel-primary" id="company-panel">
+		  					<div class="panel-heading" id="company-header">
+		    				<h3 class="panel-title">
+								Employees
+								<div class="align-right-button">
+										<button type="button" onclick="hideAllDivs('#addTalentPage')"class="btn btn-primary button-style">
+											<span class="glyphicon glyphicon-plus"></span>
+										</button>
+										<button type="button" onclick="hideAllDivs('#deleteTalentPage')" class="btn btn-danger button-style">
+											<span class="glyphicon glyphicon-remove-circle"></span>
+										</button>
+								</div>
+							</h3>
+		  					</div>
+		  						<div class="panel-body" id="talent-body">
+		    						<div class="row">
+		    						<div class="col-md-3">
+		    						<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Temesgxn Gebrehiwet</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Alan Vo</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Nestor Hernandez</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Faadhil Hakkim</h5>
+									  </div>
+									</div>
+									</div>
+									</div>
+
+									<div class="row">
+		    						<div class="col-md-3">
+		    						<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Bilal Hasan</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Jack Story</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>John Doe</h5>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/user_blank.png" height="100px" width="100px" />
+									    <br/>
+									    <h5>Tim Smith</h5>
+									  </div>
+									</div>
+									</div>
+									</div>
+
+								</div>
+						</div>			
+						</div>
+
+						<div class="col-md-1">
+						</div>
+					
+						<div class="col-md-3">
+				      	<div class="panel panel-primary">
+		  					<div class="panel-heading">
+		    				<h3 class="panel-title">Talent</h3>
+		  					</div>
+		  						<div id="talent-list-body"> 
+
+		  						<div class="panel-body">
+
+		  						<div class="panel panel-default" id="companyOnTalentPage" >
+								  <div class="panel-body">
+								    <img src="images/hp-logo.gif"/>
+								  </div>
+								</div>
+								</div>
+								<hr/>
+									<ul id='talent-role'>
+									
+									</ul>
+
+		  						</div>
+						</div>
+						</div>			
+
+		      		</div>
+		      </div>
+
+		      <!-- Industries -->
+		      <div id="industriesPage" style="display:none;text-align: center;">
+			  	
+		      		<div class="row">
+		      		<div class="col-md-12">
+		      			<div class="panel panel-primary" id="industry-panel">
+		  					<div class="panel-heading" id="industry-header">
+								<h1 class="panel-title">
+									Industries
+									<div class="align-right-button">
+											<button type="button" onclick="hideAllDivs('#addIndustryPage')"class="btn btn-primary button-style">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+											<button type="button" onclick="hideAllDivs('#deleteIndustryPage')" class="btn btn-danger button-style">
+												<span class="glyphicon glyphicon-remove-circle"></span>
+											</button>
+									</div>
+								</h1>
+		  					</div>
+							
+							<div class="panel-body" id="industry-body">
+								<div class="row">
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									 <img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+								   <h5>Computer Hardware</h5>
+								  </div>
+								</div>
+								</div>
+
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Computer Software</h5>
+								  </div>
+								</div>
+								</div>
+
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>IT Services</h5>
+								  </div>
+								</div>
+								</div>
+
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>IT Consulting</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Communication, Media, and Entertainment</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Energy</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Financial Services</h5>
+								  </div>
+								</div>
+								</div>
+								
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Health and Life Sciences</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Public Sector</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Manufacturing</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Retail and Consumer Goods</h5>
+								  </div>
+								</div>
+								</div>
+								
+								<div class="col-md-3">
+								<div onclick="hideAllDivs('#companyPage')" class="panel panel-default" style="cursor: pointer;height: 175px;">
+								  <div class="panel-body">
+									<img src="images/user_blank.png" height="100px" width="100px" />
+									<br/>
+									<h5>Travel and Transportation</h5>
+								  </div>
+								</div>
+								</div>
+								
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+			  <div id="addIndustryPage" style="display:none;text-align: center;">
+			  	
+		      		<div class="row">
+		      		<div class="col-md-12">
+		      			<div class="panel panel-primary" id="addIndustry-panel">
+		  					<div class="panel-heading" id="addIndustry-header">
+								<h1 class="panel-title">
+									Create New Industry
+								</h1>
+		  					</div>
+							
+							<div class="panel-body" id="addIndustry-body">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div id="deleteIndustryPage" style="display:none;text-align: center;">
+			  	
+		      		<div class="row">
+		      		<div class="col-md-12">
+		      			<div class="panel panel-primary" id="deleteIndustry-panel">
+		  					<div class="panel-heading" id="deleteIndustry-header">
+								<h1 class="panel-title">
+									Modify Industry
+								</h1>
+		  					</div>
+							
+							<div class="panel-body" id="addIndustry-body">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+		      <div id="companyPage" style="display:none; margin: auto">
+		      	
+		      	<!-- Companies
+		      	
+		      	
+		      	<div class="panel panel-primary" id="company-panel" style="display:inline;float: left; width:75%; max-width:75%">
+  					<div class="panel-heading" id="company-header">
+    				<h3 class="panel-title">Panel primary</h3>
+  					</div>
+  						<div class="panel-body" id="company-body">
+    						Contains infomation on company
+  						</div>
+  						
+				</div>
+				
+				
+				<button type="button" class="btn btn-primary btn-lg" style="width:25%; max-width:25%">New Company</button>				
+				
+				
+				
+		      	<div id="company-list-panel" class="panel panel-primary" style="display:inline; float:right; width:25%; max-width:25%;height:850px;max-height:95%;overflow: scroll">
+  					<div class="panel-heading">
+    				<h3 class="panel-title">Companies</h3>
+  					</div>
+  						<div id="company-list-body" class="panel-body">
+							<ul id="company-list" style="margin-top: 40px;padding-left: 5em">
+								<li id="1" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP</li>
+								<li id="2" style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP2</li>
+								<li id="3"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP3</li>
+								<li id="4"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP4</li>
+								<li id="5"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP5</li>
+								<li id="6"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP6</li>
+								<li id="7"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP7</li>
+								<li id="8"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP8</li>
+								<li id="9"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP9</li>
+								<li id="10"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">H10P</li>
+								<li id="11"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP11</li>
+								<li id="12"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP12</li>
+								<li id="13"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP13</li>
+								<li id="14"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP14</li>
+								<li id="15"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP15</li>
+								<li id="16"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP16</li>
+								<li id="17"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP17</li>
+								<li id="18"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP18</li>
+								<li id="19"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP19</li>
+								<li id="20"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP20</li>
+								<li id="21"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP21</li>
+								<li id="22"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP22</li>
+								<li id="23"  style="list-style-image: url('images/hp-logo.gif');margin-bottom: 40px;">HP23</li>
+							</ul>	
+  						</div>
+				</div>				
+		      	
+		      	
+		      
+		      	<!--NESTOR ALEJANDRO H-->
+		      		
+		      		<div class="row">
+		      		<div class="col-md-12">
+		      			<div class="panel panel-primary" id="company-panel">
+		  					<div class="panel-heading" id="company-header">
+		    				<h3 class="panel-title">Companies</h3>
+		  					</div>
+		  						<div class="panel-body" id="company-body">
+		    						<div class="row">
+		    						<div class="col-md-3">
+		    						<div class="panel panel-default" onclick="hideAllDivs('#projectPage')" style="height: 175px; cursor:pointer;">
+									  <div class="panel-body">
+									    <img src="images/companylogos/atmos.jpg" height="100px" width="100px" />
+									    <br/>
+									    <h3>Atmos Energy</h3>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/companylogos/bridger.png" height="100px" width="100px" />
+									    <br/>
+									    <h3>Bridger</h3>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/companylogos/silversprings.jpg" height="100px" width="100px" />
+									    <br/>
+									    <h3>Silver Springs</h3>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/companylogos/thinklite.jpg" height="100px" width="100px" />
+									    <br/>
+									    <h3>ThinkLite</h3>
+									  </div>
+									</div>
+									</div>
+									</div>
+
+									
+
+								</div>
+						</div>			
+						</div>	
+		      	
+		      
+		      	</div>
+		      	
+		      	
+		      </div>
+
+		      <div id="projectPage" style="display:none;text-align: center">
+		      	<div class="row">
+		      		<div class="col-md-8">
+		      			<div class="panel panel-primary" id="project-panel">
+		  					<div class="panel-heading" id="project-header">
+		    				<h3 class="panel-title">Atmos Energy Projects</h3>
+		  					</div>
+		  						<div class="panel-body" id="company-body">
+		    						<div class="row">
+		    						<div class="col-md-3">
+		    						<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/hp-logo.gif" height="100px" width="100px" />
+									    <br/>
+									    <h3>Project 1</h3>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/hp-logo.gif" height="100px" width="100px" />
+									    <br/>
+									    <h3>Project 2</h3>
+									  </div>
+									</div>
+									</div>
+
+									<div class="col-md-3">
+									<div class="panel panel-default" style="height: 175px;">
+									  <div class="panel-body">
+									    <img src="images/hp-logo.gif" height="100px" width="100px" />
+									    <br/>
+									    <h3>Project 3</h3>
+									  </div>
+									</div>
+									</div>
+
+									</div>
+
+									
+
+								</div>
+						</div>			
+					</div>
+
+					<div class="col-md-1">
+					</div>
+					
+					<div class="col-md-3">
+				    	<div class="panel panel-primary">
+		  				<div class="panel-heading">
+		    			<h3 class="panel-title">Project</h3>
+		  				</div>
+		  						<div id="project-list-body" class="panel-body">
+
+			  						<div class="panel panel-default" style="text-align: left">
+	  									<div class="panel-body">
+	  										<img src="images/user_blank.png" height="100px" width="100px" />
+	   										 Basic panel
+	  									</div>
+									</div>
+	
+									<div class="panel panel-default" style="text-align: left">
+										<div class="panel-body">
+		  									<img src="images/user_blank.png" height="100px" width="100px" /> 
+		  									Name 2	
+		  								</div>
+		  							</div>		
+		  						</div>
+						</div>
+					</div>
+
+				
+				</div>
+
+		      </div>
+
+		      <div id="regionPage" style="display:none;">
+		      </div>
+
+      </div>
+
+		<script> //This is where javascript goes. Comment syntax is different from HTML
+
+		// Use this function to hide other "pages"
+		//For example of this, look at the button tag in id="cube" div
+		function hideAllDivs(showDiv){ 
+			var animation = 'clip';
+			$('#content').children().hide(animation);
+			$(showDiv).show(animation);
+		}
+
+		function notify (message){
+
+			message = (message) ? message : "My message";
+
+			$.bootstrapGrowl(message, 
+				{
+				  ele: 'body', // which element to append to
+				  type: 'info', // (null, 'info', 'error', 'success')
+				  offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+				  align: 'right', // ('left', 'right', or 'center')
+				  width: 250, // (integer, or 'auto')
+				  delay: 4000,
+				  allow_dismiss: true,
+				  stackup_spacing: 10 //spacing between consecutively stacked growls.
+				}
+  			);
+		}
+
+    //Returns smaller size from width/height of window
+    function getMaxCubeSize(){
+
+      //Get 80% of height and width
+      var height = Math.floor($(window).height() * 0.8);
+      var width = Math.floor($(window).width() * 0.8);
+
+      //Return dimension that is lesser to contrain the size of cube
+      if (height > width) 
+        return width;
+      else 
+        return height;
+    }
+    
+     
+		</script>
+		
+		
+		
+		
+		
+	<!-- Compnay Javascript and jQuery Used-->	
+		<script>
+			window.onload=function()
+			{
+				var lis=document.getElementById('company-list').getElementsByTagName('li');
+				for(i=0;i<lis.length;i++)
+				{
+					lis[i].onclick=myFunction;
+				}		
+			}
+
+			function myFunction()
+			{
+
+				$('#company-header .panel-title').html(this.innerHTML);
+
+				$('#company-panel .panel-body').html(this.innerHTML);
+			}
+			
+			   
+		</script>
+
+
+
+		<script type="text/javascript">
+
+		 //This function runs first thing once the document is finished rendering
+		$(document).ready(function(){
+
+			//Initialize Slidr.js cube
+
+			slidr.create('slidr-img', {
+			  after: function(e) { console.log('in: ' + e.in.slidr); },
+			  before: function(e) { console.log('out: ' + e.out.slidr); },
+			  breadcrumbs: true,
+			  controls: 'border',
+			  direction: 'horizontal',
+			  fade: false,
+			  keyboard: true,
+			  overflow: true,
+			  theme: '#222',
+			  timing: { 'cube': '0.3s ease-in' },
+			  touch: true,
+			  transition: 'cube'
+			}).start();
+			
+			$('#company-list').sortable({revert: false});
+			
+			$('#company-list li').each(function(i)
+			{
+			   $(this).draggable({ scroll: true,
+			   	connectToSortable: "#company-list",
+ 			    revert: "invalid",
+ 			    containment: "[500px, 500px, 500px, 500px]"
+ 			     });
+			});
+
+			$('#companyOnTalentPage').sortable({revert: false});
+
+			$('#company-panel .panel-default').each(function(i)
+			{
+			   $(this).draggable({ scroll: true,
+			   	//connectToSortable: "#company-list",
+ 			    revert: "invalid",
+ 			    stack: ".panel-default"
+ 			    //containment: "[500px, 500px, 500px, 500px]"
+ 			     });
+			});
+
+			$( "#company-panel .panel-default" ).droppable();
+
+			$( "#talent-list-body" ).droppable({
+		      activeClass: "ui-state-default",
+		      hoverClass: "ui-state-hover",
+		      accept: ":not(.ui-sortable-helper)",
+		      drop: function( event, ui ) {
+		      	$ui = ui.draggable
+		        $item = $( this )
+		        $ui.fadeOut(function(){
+		        	$ui.appendTo('#talent-role').fadeIn(function() {
+				          $ui
+				            .animate({ width: "100px", height: "100px" })
+				            .find("img")
+				              .animate({ height: "36px", width: "36px"});
+				        });
+		        })
+		        
+		      }
+		    }).sortable({
+		      //items: "li:not(.placeholder)",
+		      sort: function() {
+		        // gets added unintentionally by droppable interacting with sortable
+		        // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+		        $( this ).removeClass( "ui-state-default" );
+		      }
+		    });
+
+		    $( "#talent-body" ).droppable({
+		      activeClass: "ui-state-default",
+		      hoverClass: "ui-state-hover",
+		      accept: ":not(.ui-sortable-helper)",
+		      drop: function( event, ui ) {
+		        $( this ).find( "#talent-body" ).remove();
+		        //$( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
+		      }
+		    }).sortable({
+		      //items: "li:not(.placeholder)",
+		      sort: function() {
+		        // gets added unintentionally by droppable interacting with sortable
+		        // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+		        $( this ).removeClass( "ui-state-default" );
+		      }
+		    });
+			
+		});
+
+		
+		</script>
+		
+	</body>
+</html>
